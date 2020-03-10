@@ -123,7 +123,7 @@ habita <- left_join(habit, ramets, by = "Site")
 habitat <- left_join(habita, flowers, by = "Site")
 
 #Export as .csv file
-#write.csv(habitat, "C:/Users/Morgan/Documents/UIUC/Analyses/beebeds/Data/Vegetation/Bee Beds Total Habitat Resources.csv", row.names = FALSE)
+#write.csv(habitat, "C:/Users/Morgan/Documents/UIUC/Analyses/beebeds/Data/Vegetation/Bee Beds Transect Habitat Resources.csv", row.names = FALSE)
 
 #Bee Beds Bare Ground ####
 #-------------------------------------------------------------------#
@@ -206,10 +206,10 @@ bb.floralspp_total <- bbVeg %>%
 #                  Bee Beds Total Habitat Resources                 #
 #-------------------------------------------------------------------#
 #Join all habitat resource dataframes together: avg.bareground, avg.veg, floralspp, ramets, and flowers
-bb.habi <- left_join(avg.bareground, avg.veg, by = "Site")
-bb.habit <- left_join(habi, floralspp, by = "Site")
-bb.habita <- left_join(habit, ramets, by = "Site")
-bb.habitat <- left_join(habita, flowers, by = "Site")
+bb.habi <- left_join(bb.avg.bareground, bb.avg.veg, by = "Site")
+bb.habit <- left_join(bb.habi, bb.floralspp, by = "Site")
+bb.habita <- left_join(bb.habit, bb.ramets, by = "Site")
+bb.habitat <- left_join(bb.habita, bb.flowers, by = "Site")
 
 #Export as .csv file
-#write.csv(habitat, "C:/Users/Morgan/Documents/UIUC/Analyses/beebeds/Data/Vegetation/Bee Beds Total Habitat Resources.csv", row.names = FALSE)
+#write.csv(bb.habitat, "C:/Users/Morgan/Documents/UIUC/Analyses/beebeds/Data/Vegetation/Bee Beds Habitat Resources.csv", row.names = FALSE)
